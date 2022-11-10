@@ -4,15 +4,66 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author LAB-2
  */
 public class Dueño {
-     
+
     private String cedula;
     private String nombre;
-    private int cantidadTelefonos;
+    private ArrayList<Telefono> telefonoList;
+
+    public Dueño(String cedula, String nombre) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.telefonoList = new ArrayList<Telefono>();
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Telefono> getTelefonoList() {
+        return telefonoList;
+    }
+
+    public void setTelefonoList(ArrayList<Telefono> telefonoList) {
+        this.telefonoList = telefonoList;
+    }
+
+    public void nuevoTelefono(String numero, int extension, String tipoTelefono, String operadora) {
+        var telefono = new Telefono(numero, extension, tipoTelefono, operadora);
+        this.telefonoList.add(telefono);
+
+    }
+
+    @Override
+    public String toString() {
+
+        var retorno = "cedula=" + cedula + ", nombre=" + nombre + "\n";
+
+        for (int i = 0; i < this.telefonoList.size(); i++) {
+            retorno += this.telefonoList.get(i) + "\n";
+        }
+        return retorno;
+    }
+
+    /*  private int cantidadTelefonos;
     private Telefono[] telefonoList;
 
     public Dueño(String cedula, String nombre, int cantidadTelefonos) {
@@ -70,5 +121,5 @@ public class Dueño {
         return "";
 
     }
-    
+     */
 }
