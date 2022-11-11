@@ -4,17 +4,21 @@
  */
 package vista;
 
+import java.time.LocalDate;
 import modelo.Carrera;
 import modelo.Estudiante;
+import modelo.Jugador;
+import servicio.EstudianteServicio;
+import servicio.JugadorServicio;
 
 /**
  *
  * @author LAB-2
  */
 public class principal_02_02 {
-    
+
     public static void main(String[] args) {
-    
+        /*
         var pedro = new Estudiante("0105781587","Pedro ALvarez");
         var karla = new Estudiante("0302721006","Karla Vazquez");
         var andres = new Estudiante("0106043409","Andres Calderon");
@@ -31,15 +35,35 @@ public class principal_02_02 {
         System.out.println(teleco);
         System.out.println(arqui);
     
-    
-    
-    
-    
-    
-    
-    
-    
+         */
+
+        var jugador = new Jugador("Enner", 80, 175, LocalDate.of(1999, 4, 19));
+        var jugador1 = new Jugador("Byron", 80, 175, LocalDate.of(1999, 4, 19));
+        var jugador2 = new Jugador("Juan", 80, 175, LocalDate.of(1999, 4, 19));
+
+        var pedro = new Estudiante("0105781587", "Pedro ALvarez");
+        var karla = new Estudiante("0302721006", "Karla Vazquez");
+        var andres = new Estudiante("0106043409", "Andres Calderon");
+
+        var baseDatosJugadores = new JugadorServicio();
+        baseDatosJugadores.crear(jugador);
+        baseDatosJugadores.crear(jugador1);
+        baseDatosJugadores.crear(jugador2);
+        
+
+        var baseDatosEstudiantes = new EstudianteServicio();
+        baseDatosEstudiantes.crear(pedro);
+        baseDatosEstudiantes.crear(karla);
+        baseDatosEstudiantes.crear(andres);
+
+        System.out.println(baseDatosJugadores.listar());
+        baseDatosJugadores.eliminarPorPosicion(2);
+        System.out.println(baseDatosJugadores.listar());
+
+        System.out.println(baseDatosEstudiantes.listar());
+        baseDatosEstudiantes.eliminarPorPosicion(1);
+        System.out.println(baseDatosEstudiantes.listar());
+
     }
 
-    
 }

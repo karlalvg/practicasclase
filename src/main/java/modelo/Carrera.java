@@ -14,21 +14,16 @@ import modelo.Telefono;
 public class Carrera {
     private String nombre;
     private int ciclos;
-    private ArrayList <Estudiante> estudianteList;
+    
     
 
     public Carrera(String nombre, int ciclos) {
         this.nombre = nombre;
         this.ciclos = ciclos;
-        this.estudianteList= new ArrayList<Estudiante> ();
-      
+       
     }
     
-    
-    public void nuevoEstudiante (Estudiante e) {
-        var estudiante = e;
-        this.estudianteList.add(estudiante);
-    }
+   
 
     public String getNombre() {
         return nombre;
@@ -50,12 +45,8 @@ public class Carrera {
     public String toString() {
         
     
-      var retorno = "NombreCarrera=" + nombre + ", NCiclos=" + ciclos + "\n";
-
-        for (int i = 0; i < this.estudianteList.size(); i++) {
-            retorno += this.estudianteList.get(i) + "\n";
-        }
-        return retorno;
+     
+        return "";
     }
     
 }
