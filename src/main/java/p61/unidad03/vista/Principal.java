@@ -14,11 +14,10 @@ import javax.swing.JFrame;
 public class Principal {
     
     public static void main(String[] args) {
-        var ventana1 = new Ventana0301a("Ecuador");
-        ventana1.iniciarComponentes();
-        ventana1.setVisible(true);
         
         
+         var ventana = new  Ventanab();
+         
     }
     
 }

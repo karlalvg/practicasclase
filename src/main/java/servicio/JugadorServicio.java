@@ -4,38 +4,23 @@
  */
 package servicio;
 
-
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Estudiante;
 import modelo.Jugador;
-import modelo.Telefono;
 
 /**
  *
  * @author LAB-2
  */
-public class JugadorServicio {
 
-    private List<Jugador> jugadorList;
+public interface JugadorServicio {
 
-    public JugadorServicio() {
-        this.jugadorList = new ArrayList<Jugador>();
-    }
+    public abstract void crear(Jugador jugador);
 
-    public void crear(Jugador jugador) {
-        this.jugadorList.add(jugador);
+    public abstract void modificar(int codigo, Jugador jugadorModificado);
 
-    }
+    public abstract void eliminar(int codigo);
 
-    public List<Jugador> listar() {
-        return this.jugadorList;
-    }
+    public abstract List<Jugador> listar();
 
-    public void eliminarPorPosicion(int posicion) {
-        this.jugadorList.remove(posicion);
-
-    }
-
-    
 }

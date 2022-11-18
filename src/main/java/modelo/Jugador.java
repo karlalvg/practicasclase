@@ -18,14 +18,25 @@ public class Jugador {
     private double peso;
     private int estatura;
     private LocalDate fechaNacimiento;
+    private int codigo;
 
-    public Jugador(String nombre, double peso, int estatura, LocalDate fechaNaciento) {
+    public Jugador(String nombre, double peso, int estatura, LocalDate fechaNaciento, int codigo) {
         this.nombre = nombre;
         this.peso = peso;
         this.estatura = estatura;
         this.fechaNacimiento = fechaNacimiento;
-
+        this.codigo = codigo;
     }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    
 
     public int calcularEdad() {
         var yearActual = LocalDate.now().getYear();
@@ -66,7 +77,7 @@ public class Jugador {
 
     @Override
     public String toString() {
-        return "Jugador{" + "nombre=" + nombre + ", peso=" + peso + ", estatura=" + estatura + ", La edad es =" + this.calcularEdad() + "\n";
+        return "Jugador{" + "nombre=" + nombre + ", peso=" + peso + ", estatura=" + estatura + ", La edad es = \n";
     }
 
 }
