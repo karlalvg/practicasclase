@@ -24,10 +24,9 @@ import javax.swing.JPanel;
 public class Ventanab extends JFrame {
     private List<JPanel> jPanelList;
     private List<JLabel> jLabelList;
-    qatar qatar = new qatar();
 
     public Ventanab() throws HeadlessException {
-        this.setTitle("Ventana b");
+        this.setTitle("Ventana 0301b");
         this.setSize(800, 600);
         this.setLocation(200, 100);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,7 +34,6 @@ public class Ventanab extends JFrame {
         this.iniciarLabels();
         this.setContentPane(this.jPanelList.get(0));        
         this.setVisible(true);
-        this.setContentPane(qatar);
     }
     
     private void iniciarPanels(){
@@ -47,10 +45,10 @@ public class Ventanab extends JFrame {
         this.jPanelList.add(new JPanel());
         
         this.jPanelList.get(0).setBackground(Color.white);
-        this.jPanelList.get(1).setBackground(Color.red);
-        this.jPanelList.get(2).setBackground(Color.yellow);
-        this.jPanelList.get(3).setBackground(Color.green);
-        this.jPanelList.get(4).setBackground(Color.orange);
+        this.jPanelList.get(1).setBackground(Color.yellow);
+        this.jPanelList.get(2).setBackground(Color.blue);
+        this.jPanelList.get(3).setBackground(Color.red);
+        this.jPanelList.get(4).setBackground(Color.green);
         
         this.jPanelList.get(0).add(this.jPanelList.get(1));
         this.jPanelList.get(0).add(this.jPanelList.get(2));
@@ -60,28 +58,17 @@ public class Ventanab extends JFrame {
     
     public void iniciarLabels(){
         this.jLabelList = new ArrayList<>();
-        this.jLabelList.add(new JLabel("Qatar"));
-        this.jLabelList.add(new JLabel("Ecuador"));
-        this.jLabelList.add(new JLabel("Senegal"));
-        this.jLabelList.add(new JLabel("Holanda"));
+        this.jLabelList.add(new JLabel("Amarillo"));
+        this.jLabelList.add(new JLabel("Azul"));
+        this.jLabelList.add(new JLabel("Rojo"));
+        this.jLabelList.add(new JLabel("verde"));
         
         this.jPanelList.get(1).add(this.jLabelList.get(0));
         this.jPanelList.get(2).add(this.jLabelList.get(1));
         this.jPanelList.get(3).add(this.jLabelList.get(2));
         this.jPanelList.get(4).add(this.jLabelList.get(3));
     }
-    
-    class qatar extends JPanel{
-    private Image imagen;
-    
-    @Override
-    public void paint(Graphics q){
-        imagen = new ImageIcon(getClass().getResource("/imagenes/qatar.png")).getImage();
-        q.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
-        setOpaque(false);
-        super.paint(q);
-    }
-    }
+   
         
         
     }

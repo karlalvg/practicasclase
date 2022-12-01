@@ -29,7 +29,7 @@ public class Ventana0301a extends JFrame {
         this.setLayout(new FlowLayout());
     }
 
-    public void iniciarComponentes() {
+        public void iniciarComponentes() {
         var jPanelRojo = new JPanel();
         var jPanelAzul = new JPanel();
         var jPanelVerde = new JPanel();
